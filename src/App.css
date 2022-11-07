@@ -1,38 +1,121 @@
-.App {
+.header {
+  background-color: var(--primary-color);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hacker__news {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.logo__container {
+  width: 40px;
+}
+
+.logo__container img,
+.home__logo__container img {
+  width: 100%;
+  display: block;
+}
+
+main {
+  position: relative;
+}
+
+section {
+  background-color: var(--body-bg-color);
+}
+
+.filters__container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 5px;
+}
+
+.results__count {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 0.5rem;
+  margin-left: auto;
+}
+
+.loader__wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: grid;
+  place-items: center;
+}
+
+.loader__data__wrapper {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.newslist__container {
+  padding: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.news__item__wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 2px;
+}
+
+.news__item__wrapper strong {
+  font-weight: 400;
+}
+
+.news__item {
+  margin-bottom: 0.5rem;
+}
+
+.news__item h4 {
+  margin: 0;
+}
+
+.news__subdata {
+  color: var(--sub-data-color);
+  font-size: 11px;
+}
+
+.error__message__container {
+  padding: 3rem 1rem;
+}
+
+.not__found__message {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.paginator__component {
+  padding: 1rem 0.5rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.page__link {
+  border: 1px solid;
+  cursor: pointer;
+  padding: 0.1rem 0.5rem;
+  display: grid;
+  place-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page__link img {
+  width: 15px;
+  display: block;
+}
+
+.page__link.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
