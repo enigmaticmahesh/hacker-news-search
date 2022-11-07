@@ -25,7 +25,6 @@ const forFilter = (time) => {
       return '';
   }
 
-  // return `&numericFilters=created_at_i>${beforeTime.valueOf()},created_at_i<${Date.now()}`;
   return `&numericFilters=(created_at_i>${beforeTime.valueOf()},created_at_i<${Date.now()})`;
 };
 
@@ -55,13 +54,12 @@ export default function NewsContextProvider({ children }) {
     query += state.pageNum ? `&page=${state.pageNum}` : '';
 
     const url = `${api}${query}`;
-    console.log({ url });
     dispatch({ type: FILTER_ACTIONS.FETCHING_NEWS });
     try {
       const data = await fetch(url);
       const res = await data.json();
 
-      console.log({ res });
+      // console.log({ res });
       dispatch({
         type: FILTER_ACTIONS.FETCH_NEWS_SUCCESS,
         payload: res,

@@ -23,6 +23,11 @@ const geenrateLinks = (pages, pageNum) => {
   if (pageNum > 4 && pageNum < pages - 5) {
     return [...new Array(11)];
   }
+
+  if (pages < 6 && pages > 1) {
+    return [...new Array(pages)];
+  }
+
   return [...new Array(6)];
 };
 
@@ -60,7 +65,7 @@ export default function CustomFooter() {
     state.pageNum < 6 ? index + 1 : state.pageNum + index - 4;
 
   const isActive = (index) =>
-    displayValue(index) == state.pageNum + 1
+    displayValue(index) === state.pageNum + 1
       ? 'page__link active'
       : 'page__link';
 
@@ -86,7 +91,7 @@ export default function CustomFooter() {
       </div>
     ) : null;
 
-  if (state.loading) {
+  if (state.loading || !state.news.length || state.pages === 1) {
     return null;
   }
 
