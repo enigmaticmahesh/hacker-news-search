@@ -72,6 +72,7 @@ export default function NewsContextProvider({ children }) {
 
   useEffect(() => {
     fetchNews();
+    // eslint-disable-next-line
   }, [state.type, state.by, state.for, state.search, state.pageNum]);
 
   const contextValue = {
